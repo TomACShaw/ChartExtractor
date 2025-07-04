@@ -1,0 +1,11 @@
+diastolic: 
+0:00, 220 hr: x=537, y=1017
+3:25, 30 hr: x=2987, y=1773
+
+systolic:
+0:00, 220 hr: x=537, y=1002 (diastolic y - 15)
+
+
+
+x diff = 60
+y diff = 40
