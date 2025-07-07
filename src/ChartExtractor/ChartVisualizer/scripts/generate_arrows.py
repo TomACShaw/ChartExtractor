@@ -1,8 +1,13 @@
 from PIL import Image, ImageDraw
 
+"""This script generates the required asset PNG files for chart visualizations if
+they aren't already present in the assets folder.
+
+Each function creates a transparent background for the asset to be drawn on to,
+draws the asset, composites them together, and then saves the output as a PNG."""
+
 
 def draw_systolic_arrow():
-
     with Image.new(mode="RGBA", size=(20, 15), color=(255, 255, 255, 0)) as base:
         systolic_arrow = Image.new(mode="RGBA", size=base.size, color=(255, 255, 255, 0))    
         draw = ImageDraw.Draw(base)
@@ -13,7 +18,6 @@ def draw_systolic_arrow():
 
 
 def draw_diastolic_arrow():
-
     with Image.new(mode="RGBA", size=(20, 15), color=(255, 255, 255, 0)) as base:
         diastolic_arrow = Image.new(mode="RGBA", size=base.size, color=(255, 255, 255, 0))    
         draw = ImageDraw.Draw(base)
@@ -24,14 +28,12 @@ def draw_diastolic_arrow():
 
 
 def draw_dot():
-
     with Image.new(mode="RGBA", size=(10, 10), color=(255, 255, 255, 0)) as base:
         dot = Image.new(mode="RGBA", size=base.size, color=(255, 255, 255, 0))    
         draw = ImageDraw.Draw(base)
         draw.circle(xy=(5, 5), radius=5, fill=("black"))
         out = Image.alpha_composite(dot, base)
     out.save("dot.png")
-
 
 
 if __name__ == "__main__":
